@@ -7,8 +7,6 @@
 #ifndef BF_H
 #define BF_H
 
-#include <stdbool.h>
-
 #define BF_CHARSET_DIGITS "0123456789"
 #define BF_CHARSET_LOWER "abcdefghijklmnopqrstuvwxyz"
 #define BF_CHARSET_UPPER "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
