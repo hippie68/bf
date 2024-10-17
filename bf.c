@@ -19,7 +19,7 @@ struct bf_pool {
     unsigned char *final_passcode; // Further passcode generation stops after
                                    // reaching this specific passcode.
     int final_passcode_len;        // Final passcode length in bytes.
-    int chunk_size;                // Number of passcodes for each thread to try
+    int chunk_size;                // Number of passcodes for each task to try
                                    // at a time.
     char *password;                // Used to store a password found by a task.
     enum bf_pool_status status;    // The current pool status (see bf.h).
@@ -273,7 +273,7 @@ int bf_task_update(struct bf_task *task)
         return 1;
     }
 
-    // First, pass current chunk of pool task to thread.
+    // First, pass current chunk of passcode generation data to task.
     memcpy(task->passcode, pool->passcode, pool->max_len);
     task->passcode[0] -= 1;
     task->counter = pool->chunk_size;
