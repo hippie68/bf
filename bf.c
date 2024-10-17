@@ -22,7 +22,7 @@ struct bf_pool {
     int chunk_size;                // Number of passcodes for each thread to try
                                    // at a time.
     char *password;                // Used to store a password found by a task.
-    enum bf_pool_status status;    // If set to false, bf_task_gen() returns 0.
+    enum bf_pool_status status;    // The current pool status (see bf.h).
     pthread_mutex_t mutex;
 };
 
@@ -102,7 +102,7 @@ next_end:
 
     pool->chunk_size = DEFAULT_CHUNK_SIZE;
     pool->password = NULL;
-    pool->status = false;
+    pool->status = BF_OPEN;
 
     if (pthread_mutex_init(&pool->mutex, NULL))
         goto error;
