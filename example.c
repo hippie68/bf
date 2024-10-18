@@ -7,7 +7,6 @@
 #include <pthread.h>
 #include <signal.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define PASSWORD_MIN_LEN 1
