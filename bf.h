@@ -38,9 +38,6 @@ struct bf_pool *bf_pool_create(const char *charset, int min_len, int max_len,
 // Properly frees the data structure's allocated memory.
 void bf_pool_destroy(struct bf_pool *pool);
 
-// Copies passwords from a dictionary file to a pool.
-int bf_pool_add(struct bf_pool * pool, char *filename);
-
 // Changes the number of passcodes bf_task_generate_password() takes from the
 // pool. The default number is 4096.
 void bf_pool_set_chunk_size(struct bf_pool *pool, int chunk_size);
