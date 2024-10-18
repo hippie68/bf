@@ -62,8 +62,8 @@ char *bf_pool_get_password(struct bf_pool *pool);
 // bf_task_generate_password() to return 0.
 void bf_pool_close(struct bf_pool *pool);
 
-// Creates a new data structure required by bf_gen() and ties it to an existing
-// pool.
+// Creates a new data structure required by bf_task_generate_password() and ties
+// it to an existing pool.
 struct bf_task *bf_task_create(const struct bf_pool *pool);
 
 // Properly frees the data structure's allocated memory.
